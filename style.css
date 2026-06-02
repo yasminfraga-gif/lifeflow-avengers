@@ -1,0 +1,383 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #e7e6e1;
+    color: #222;
+    transition: 0.3s;
+  }
+  
+  /* HEADER */
+  header {
+    background: #b22222;
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  }
+  
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+  }
+  
+  nav {
+    display: flex;
+    gap: 18px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  nav a:hover {
+    opacity: 0.8;
+  }
+  
+  #modoBtn {
+    background: white;
+    color: #b22222;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  /* PÁGINAS */
+  .pagina {
+    display: none;
+    padding: 50px;
+    min-height: 85vh;
+  }
+  
+  .pagina.ativa {
+    display: block;
+  }
+  
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-bottom: 25px;
+    color: #b22222;
+  }
+  
+  /* HERO */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+  }
+  
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+  }
+  
+  .hero-texto {
+    width: 55%;
+    z-index: 2;
+  }
+  
+  .hero-texto h2 {
+    font-size: 52px;
+    line-height: 1.2;
+  }
+  
+  .subtitulo {
+    font-size: 18px;
+    color: #555;
+    margin: 20px 0;
+  }
+  
+  .hero-botoes {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .hero-btn,
+  .hero-btn-secundario,
+  button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  
+  .hero-btn,
+  button {
+    background: #b22222;
+    color: white;
+  }
+  
+  .hero-btn-secundario {
+    background: white;
+    color: #b22222;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* CARDS */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+  
+  .card,
+  .mini-card,
+  .dia {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  }
+  
+  .card h3,
+  .mini-card h3,
+  .dia h3 {
+    font-family: 'Playfair Display', serif;
+    color: #b22222;
+    margin-bottom: 12px;
+  }
+  
+  /* LOGIN */
+  .formulario {
+    max-width: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+  }
+  
+  input,
+  select,
+  textarea {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: none;
+  }
+  
+  /* PLANNER */
+  .planner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  /* TAREFAS */
+  .tarefas-box {
+    margin-top: 20px;
+  }
+  
+  #listaTarefas {
+    margin-top: 20px;
+  }
+  
+  #listaTarefas li {
+    list-style: none;
+    background: white;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+  
+  /* BARRA */
+  .barra {
+    background: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 22px;
+    margin: 15px 0;
+  }
+  
+  .barra-preenchida {
+    background: #b22222;
+    width: 0%;
+    height: 100%;
+    transition: 0.5s;
+  }
+  
+  /* TIMER */
+  .timer-area {
+    text-align: center;
+  }
+  
+  #timer {
+    font-size: 64px;
+    font-family: 'Playfair Display', serif;
+    color: #b22222;
+    margin-bottom: 20px;
+  }
+  
+  /* PREMIUM */
+  .premium-card {
+    border: 2px solid #b22222;
+    transform: scale(1.03);
+  }
+  
+  .premium-btn {
+    background: #b22222;
+  }
+  
+  /* FOOTER */
+  footer {
+    background: #b22222;
+    color: white;
+    text-align: center;
+    padding: 18px;
+  }
+  
+  /* MODO ESCURO */
+  body.escuro {
+    background: #121212;
+    color: white;
+  }
+  
+  body.escuro .card,
+  body.escuro .mini-card,
+  body.escuro .dia,
+  body.escuro .formulario {
+    background: #1f1f1f;
+    color: white;
+  }
+  
+  body.escuro input,
+  body.escuro select,
+  body.escuro textarea {
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+  }
+  
+  /* MODO ESCURO NOVO */
+  
+  body.escuro {
+    background: #1c1816;
+    color: #f5efe6;
+  }
+  
+  body.escuro header {
+    background: #5c1f1f;
+  }
+  
+  body.escuro footer {
+    background: #5c1f1f;
+  }
+  
+  body.escuro .card,
+  body.escuro .mini-card,
+  body.escuro .dia,
+  body.escuro .formulario {
+    background: #2a2421;
+    color: #f5efe6;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  }
+  
+  body.escuro h2,
+  body.escuro h3 {
+    color: #e8b4a0;
+  }
+  
+  body.escuro .subtitulo {
+    color: #d8c8bf;
+  }
+  
+  body.escuro input,
+  body.escuro select,
+  body.escuro textarea {
+    background: #3a312d;
+    color: #fff;
+    border: 1px solid #5c4a43;
+  }
+  
+  body.escuro .barra {
+    background: #3b302c;
+  }
+  
+  body.escuro .barra-preenchida {
+    background: #d96c4a;
+  }
+  
+  body.escuro .hero-btn,
+  body.escuro button {
+    background: #a94438;
+  }
+  
+  body.escuro .hero-btn-secundario {
+    background: #3a312d;
+    color: #f5efe6;
+    border: 1px solid #a94438;
+  }
+  
+  body.escuro #modoBtn {
+    background: #f5efe6;
+    color: #5c1f1f;
+  }
+  
+  body.escuro #timer {
+    color: #e8b4a0;
+  }
+  
+  body.escuro nav a {
+    color: #f5efe6;
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .hero-texto {
+        width: 100%;
+    }
+  
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+  
+    header {
+        justify-content: center;
+        gap: 20px;
+    }
+  
+    .hero-botoes {
+        justify-content: center;
+    }
+  }

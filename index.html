@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeFlow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>LifeFlow</h1>
+
+  <nav>
+    <a data-pagina="inicio">Início</a>
+    <a data-pagina="login">Login</a>
+    <a data-pagina="dashboard">Dashboard</a>
+    <a data-pagina="tarefas">Rotina</a>
+    <a data-pagina="pomodoro">Foco</a>
+    <a data-pagina="bemestar">Bem-estar</a>
+    <a data-pagina="planos">Planos</a>
+  </nav>
+
+  <button id="modoBtn">Modo Escuro</button>
+</header>
+
+<!-- INÍCIO -->
+<section id="inicio" class="pagina ativa">
+  <div class="hero">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-texto">
+      <h2>Organize sua rotina.<br>Cuide do seu bem-estar.</h2>
+
+      <p class="subtitulo">
+        O LifeFlow ajuda você a equilibrar produtividade,
+        foco e qualidade de vida em uma única plataforma.
+      </p>
+
+      <div class="hero-botoes">
+        <button onclick="abrirPagina('login')" class="hero-btn">
+          Começar Agora
+        </button>
+
+        <button onclick="abrirPagina('planos')" class="hero-btn-secundario">
+          Ver Planos
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-destaques">
+      <div class="mini-card">
+        <h3>Rotina Inteligente</h3>
+        <p>Planejamento semanal organizado.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Pomodoro</h3>
+        <p>Mais foco nos estudos.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Bem-estar</h3>
+        <p>Hábitos saudáveis.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="pagina">
+  <h2>Entrar</h2>
+
+  <div class="formulario">
+    <input type="text" id="nome" placeholder="Nome">
+    <input type="email" id="email" placeholder="E-mail">
+    <input type="number" id="idade" placeholder="Idade">
+
+    <button onclick="login()">Entrar</button>
+
+    <p id="mensagemLogin"></p>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="pagina">
+  <h2>Dashboard</h2>
+
+  <p id="usuarioLogado"></p>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Progresso diário</h3>
+
+      <div class="barra">
+        <div class="barra-preenchida" id="barraProgresso"></div>
+      </div>
+
+      <p id="porcentagem">Nenhuma tarefa concluída ainda</p>
+    </div>
+
+    <div class="card">
+      <h3>Humor</h3>
+
+      <select id="humor">
+        <option>😊 Feliz</option>
+        <option>😐 Normal</option>
+        <option>😞 Cansada</option>
+      </select>
+
+      <button onclick="registrarHumor()">Registrar</button>
+
+      <p id="resultadoHumor"></p>
+    </div>
+
+    <div class="card">
+      <h3>Desafio diário</h3>
+      <p id="desafio"></p>
+    </div>
+
+    <div class="card">
+      <h3>Sequência</h3>
+      <p id="sequenciaDias">3 dias produtivos 🔥</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ROTINA -->
+<section id="tarefas" class="pagina">
+  <h2>Rotina Semanal</h2>
+
+  <div class="planner">
+
+    <div class="dia">
+      <h3>Segunda</h3>
+      <textarea placeholder="Planeje sua segunda"></textarea>
+    </div>
+
+    <div class="dia">
+      <h3>Terça</h3>
+      <textarea placeholder="Planeje sua terça"></textarea>
+    </div>
+
+    <div class="dia">
+      <h3>Quarta</h3>
+      <textarea placeholder="Planeje sua quarta"></textarea>
+    </div>
+
+    <div class="dia">
+      <h3>Quinta</h3>
+      <textarea placeholder="Planeje sua quinta"></textarea>
+    </div>
+
+    <div class="dia">
+      <h3>Sexta</h3>
+      <textarea placeholder="Planeje sua sexta"></textarea>
+    </div>
+
+    <div class="dia">
+      <h3>Sábado</h3>
+      <textarea placeholder="Planeje seu sábado"></textarea>
+    </div>
+
+    <div class="dia">
+      <h3>Domingo</h3>
+      <textarea placeholder="Planeje seu domingo"></textarea>
+    </div>
+
+  </div>
+
+  <div class="tarefas-box">
+    <input type="text" id="novaTarefa" placeholder="Nova tarefa">
+    <button onclick="adicionarTarefa()">Adicionar</button>
+
+    <ul id="listaTarefas"></ul>
+  </div>
+</section>
+
+<!-- POMODORO -->
+<section id="pomodoro" class="pagina">
+  <h2>Pomodoro</h2>
+
+  <div class="card timer-area">
+    <p id="timer">25:00</p>
+
+    <button onclick="iniciarTimer()">Iniciar</button>
+    <button onclick="pausarTimer()">Pausar</button>
+    <button onclick="resetarTimer()">Resetar</button>
+  </div>
+</section>
+
+<!-- BEM ESTAR -->
+<section id="bemestar" class="pagina">
+  <h2>Bem-estar</h2>
+
+  <div class="card">
+    <h3>Hábitos Saudáveis</h3>
+
+    <div><input type="checkbox" class="habito"> Beber água</div>
+    <div><input type="checkbox" class="habito"> Dormir 8h</div>
+    <div><input type="checkbox" class="habito"> Exercício</div>
+    <div><input type="checkbox" class="habito"> Meditar</div>
+    <div><input type="checkbox" class="habito"> Ler</div>
+    <div><input type="checkbox" class="habito"> Alongamento</div>
+    <div><input type="checkbox" class="habito"> Menos tempo de tela</div>
+    <div><input type="checkbox" class="habito"> Alimentação saudável</div>
+
+    <button onclick="salvarHabitos()">Salvar</button>
+
+    <p id="resultadoHabitos"></p>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos" class="pagina">
+  <h2>Planos LifeFlow</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Gratuito</h3>
+      <p>R$ 0/mês</p>
+
+      <ul>
+        <li>Tarefas básicas</li>
+        <li>Pomodoro</li>
+        <li>Hábitos</li>
+      </ul>
+
+      <button>Plano Atual</button>
+    </div>
+
+    <div class="card premium-card">
+      <h3>Premium</h3>
+      <p>R$ 9,90/mês</p>
+
+      <ul>
+        <li>Relatórios completos</li>
+        <li>Metas avançadas</li>
+        <li>Histórico ilimitado</li>
+        <li>Temas exclusivos</li>
+        <li>Desafios personalizados</li>
+      </ul>
+
+      <button class="premium-btn" onclick="assinarPremium()">
+        Assinar
+      </button>
+
+      <p id="mensagemPremium"></p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>LifeFlow © 2026 | Bem-estar digital</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
